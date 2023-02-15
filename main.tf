@@ -1,4 +1,4 @@
-data "aws_ami" "app_ami" {
+data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
@@ -11,12 +11,12 @@ data "aws_ami" "app_ami" {
     values = ["hvm"]
   }
 
-  owners = ["247219119671"] # Reza
+  owners = ["099720109477"] # Canonical
 }
 
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
 
   tags = {
     Name = "HelloWorld"
