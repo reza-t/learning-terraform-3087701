@@ -11,7 +11,7 @@ data "aws_ami" "app_ami" {
     values = ["hvm"]
   }
 
-  owners = ["247219119671"] # Reza
+  owners = ["979382823631"] # Reza
 }
 
 resource "aws_instance" "web" {
